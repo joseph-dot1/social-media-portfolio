@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import type { CaseStudy } from "@/content/case-studies";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/motion";
@@ -27,14 +28,33 @@ export function CaseStudyFeatured({
         variants={fadeUp}
         className={flip ? "lg:order-2" : undefined}
       >
-        <PlaceholderBox
-          label={`${study.client} analytics screenshot`}
-          className="aspect-[4/3] w-full"
-        />
+        {study.image ? (
+          <Image
+            src={study.image.src}
+            width={study.image.width}
+            height={study.image.height}
+            alt={study.image.alt}
+            className="w-full rounded-2xl border border-tint shadow-lg shadow-navy/5"
+          />
+        ) : (
+          <PlaceholderBox
+            label={`${study.client} analytics screenshot`}
+            className="aspect-[4/3] w-full"
+          />
+        )}
       </motion.div>
 
       <div className={`flex flex-col gap-5 ${flip ? "lg:order-1" : ""}`}>
-        <motion.div variants={fadeUp}>
+        <motion.div variants={fadeUp} className="flex items-center gap-3">
+          {study.logo && (
+            <Image
+              src={study.logo.src}
+              width={40}
+              height={40}
+              alt={study.logo.alt}
+              className="h-10 w-10 rounded-lg border border-tint object-contain"
+            />
+          )}
           <Eyebrow>Case study — {study.client}</Eyebrow>
         </motion.div>
         <motion.h3
@@ -64,6 +84,7 @@ export function CaseStudyFeatured({
                 value={r.value}
                 prefix={r.prefix}
                 suffix={r.suffix}
+                compact={r.compact}
                 className="text-3xl font-semibold tracking-tight text-orange md:text-4xl"
               />
               <span className="max-w-[24ch] text-xs font-medium text-mute">

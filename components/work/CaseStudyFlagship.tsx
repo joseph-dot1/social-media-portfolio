@@ -9,11 +9,32 @@ import {
   useTransform,
   type MotionValue,
 } from "framer-motion";
+import Image from "next/image";
 import { flagship } from "@/content/case-studies";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/motion";
 import { Counter } from "@/components/metrics/Counter";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PlaceholderBox } from "@/components/ui/PlaceholderBox";
+
+function ProofShot({ className = "" }: { className?: string }) {
+  if (!flagship.image) {
+    return (
+      <PlaceholderBox
+        label={`${flagship.client} analytics screenshot`}
+        className={`aspect-[4/3] ${className}`}
+      />
+    );
+  }
+  return (
+    <Image
+      src={flagship.image.src}
+      width={flagship.image.width}
+      height={flagship.image.height}
+      alt={flagship.image.alt}
+      className={`rounded-2xl border border-tint shadow-lg shadow-navy/5 ${className}`}
+    />
+  );
+}
 
 const PHASES = ["The problem", "What I did", "The results"] as const;
 
@@ -26,6 +47,7 @@ function ResultsGrid() {
             value={r.value}
             prefix={r.prefix}
             suffix={r.suffix}
+            compact={r.compact}
             className="text-4xl font-semibold tracking-tight text-orange md:text-5xl"
           />
           <span className="text-sm font-medium text-mute">{r.label}</span>
@@ -38,14 +60,17 @@ function ResultsGrid() {
 function PinnedPanel({
   progress,
   range,
+  holdEnd = false,
   children,
 }: {
   progress: MotionValue<number>;
   range: [number, number, number, number];
+  /** Last panel stays visible through the pin release instead of fading out. */
+  holdEnd?: boolean;
   children: React.ReactNode;
 }) {
-  const opacity = useTransform(progress, range, [0, 1, 1, 0]);
-  const y = useTransform(progress, range, [32, 0, 0, -32]);
+  const opacity = useTransform(progress, range, holdEnd ? [0, 1, 1, 1] : [0, 1, 1, 0]);
+  const y = useTransform(progress, range, holdEnd ? [32, 0, 0, 0] : [32, 0, 0, -32]);
   return (
     <motion.div
       className="absolute inset-0 flex items-center"
@@ -69,10 +94,12 @@ function PinnedNarrative() {
     setActive(v < 0.33 ? 0 : v < 0.66 ? 1 : 2);
   });
 
+  // Each range must be strictly increasing — useTransform breaks on
+  // duplicated keyframes. The last panel holds until the pin releases.
   const ranges: [number, number, number, number][] = [
     [0, 0.02, 0.26, 0.34],
     [0.32, 0.4, 0.6, 0.68],
-    [0.66, 0.74, 1, 1],
+    [0.66, 0.74, 0.99, 1],
   ];
 
   return (
@@ -121,13 +148,10 @@ function PinnedNarrative() {
                 <p className="text-lg leading-relaxed text-mute">{flagship.action}</p>
               </div>
             </PinnedPanel>
-            <PinnedPanel progress={scrollYProgress} range={ranges[2]}>
+            <PinnedPanel progress={scrollYProgress} range={ranges[2]} holdEnd>
               <div className="grid w-full grid-cols-2 items-center gap-12">
                 <ResultsGrid />
-                <PlaceholderBox
-                  label={`${flagship.client} analytics screenshot`}
-                  className="aspect-[4/3]"
-                />
+                <ProofShot />
               </div>
             </PinnedPanel>
           </div>
@@ -191,10 +215,7 @@ function StackedNarrative() {
       >
         <span className="text-sm font-semibold text-blue">{PHASES[2]}</span>
         <ResultsGrid />
-        <PlaceholderBox
-          label={`${flagship.client} analytics screenshot`}
-          className="aspect-[4/3]"
-        />
+        <ProofShot />
       </motion.div>
     </div>
   );

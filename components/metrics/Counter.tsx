@@ -10,7 +10,7 @@ import { DURATION } from "@/lib/motion";
  */
 const compactFormat = new Intl.NumberFormat("en-US", {
   notation: "compact",
-  maximumFractionDigits: 0,
+  maximumFractionDigits: 1,
 });
 
 export function Counter({

@@ -13,11 +13,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: `${site.name} — Social Media Growth Specialist`,
   description:
-    "Social media growth and AI-powered marketing. 800,000+ organic views generated across 7 brands — automotive, education, energy, and nonprofit.",
+    "Social media growth and AI-powered marketing. 900,000+ organic views generated across 7 brands — automotive, education, energy, and nonprofit.",
   openGraph: {
     title: `${site.name} — Social Media Growth Specialist`,
     description:
-      "Client results with real numbers: 800,000+ organic views, 30+ qualified leads, 7 brands grown.",
+      "Client results with real numbers: 900,000+ organic views, 30+ qualified leads, 7 brands grown.",
     type: "website",
   },
 };

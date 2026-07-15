@@ -27,7 +27,7 @@ export const site = {
     sublineBrand:
       "Social media growth and AI-powered marketing for brands that want numbers, not noise.",
     sublineRecruiter:
-      "Social media manager and content strategist — 7 brands grown, 800,000+ organic views, open to full-time roles.",
+      "Social media manager and content strategist — 7 brands grown, 900,000+ organic views, open to full-time roles.",
   },
 
   about: {

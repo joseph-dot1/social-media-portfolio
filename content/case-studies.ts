@@ -2,6 +2,13 @@ import type { Metric } from "./metrics";
 
 export type Tier = "flagship" | "featured" | "compact";
 
+export interface CaseImage {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+}
+
 export interface CaseStudy {
   id: string;
   client: string;
@@ -13,10 +20,14 @@ export interface CaseStudy {
   problem: string;
   action: string;
   results: Metric[];
-  /** True until the client's analytics screenshot is uploaded. */
-  screenshotPending?: boolean;
+  /** Analytics screenshot proof — placeholder box renders when absent. */
+  image?: CaseImage;
+  /** Client logo — placeholder box renders when absent. */
+  logo?: CaseImage;
 }
 
+// Numbers sourced from client analytics screenshots (TikTok Studio /
+// Facebook Insights, captured 2026-07-15) — fresher than the resume.
 export const caseStudies: CaseStudy[] = [
   {
     id: "chibest",
@@ -24,18 +35,29 @@ export const caseStudies: CaseStudy[] = [
     sector: "Automotive · Lagos",
     timeframe: "Apr 2026 – present",
     tier: "flagship",
-    hook: "Repositioned a car dealer as an educational authority — 604,300+ views.",
+    hook: "Repositioned a car dealer as an educational authority — 735,800+ views in under 4 months.",
     problem:
       "Every competitor was selling cars the same way: polished visuals, zero substance. Nobody in the space was building actual buyer trust — and car buyers do their research before they ever walk in.",
     action:
-      "I repositioned the brand around an untapped “educational automotive authority” angle — rebuilt the content calendar, scripting, and editing from scratch, ran a structured community-management protocol across Facebook, Instagram, and TikTok, and co-managed paid campaigns with a media specialist on ₦300,000+ of Meta and TikTok spend.",
+      "I repositioned the brand around an untapped “educational automotive authority” angle — rebuilt the content calendar, scripting, and editing from scratch, ran a structured community-management protocol across Facebook, Instagram, and TikTok, and co-managed paid campaigns with a media specialist on ₦300,000+ of Meta and TikTok spend. Nearly a third of all TikTok views now arrive through search — buyers looking for answers and finding Chibest.",
     results: [
-      { value: 604_300, suffix: "+", label: "video views" },
-      { value: 50, suffix: "%", label: "TikTok follower growth (3,000 → 4,500+)" },
+      { value: 735_800, suffix: "+", label: "video views in under 4 months", compact: true },
+      { value: 70, suffix: "%", label: "TikTok follower growth (3,000 → 5,100+)" },
       { value: 30, suffix: "+", label: "qualified leads from paid campaigns" },
-      { value: 24_300, suffix: "+", label: "profile visits" },
+      { value: 41_900, suffix: "+", label: "likes", compact: true },
     ],
-    screenshotPending: true,
+    image: {
+      src: "/images/case-studies/chibest.png",
+      width: 1200,
+      height: 492,
+      alt: "Chibest Autos TikTok Studio analytics: 735.8K video views, up 509.2K (224.7%), Apr 1 – Jul 14",
+    },
+    logo: {
+      src: "/images/clients/chibest.png",
+      width: 400,
+      height: 398,
+      alt: "Chibest Autos logo",
+    },
   },
   {
     id: "mji",
@@ -43,35 +65,57 @@ export const caseStudies: CaseStudy[] = [
     sector: "Nonprofit",
     timeframe: "Apr 2023 – present · 3+ year retainer",
     tier: "featured",
-    hook: "From zero digital presence to 165,600+ views — and still on retainer 3 years later.",
+    hook: "From zero digital presence to 173,400+ views — and still on retainer 3 years later.",
     problem:
       "A nonprofit with real work to show and no digital presence at all — zero followers, zero reach, no way for supporters to find them.",
     action:
-      "I've led their entire digital presence on retainer for over three years: strategy, content, community, AI-generated campaign creatives — and I'm now building their website with AI-assisted development tools.",
+      "I've led their entire digital presence on retainer for over three years: strategy, content, community, AI-generated campaign creatives — and I'm now building their website with AI-assisted development tools. Page visits are up 139.6% and follower growth is up 248.8% period over period.",
     results: [
-      { value: 165_600, suffix: "+", label: "Facebook views, from zero" },
-      { value: 740, label: "Facebook followers built from scratch" },
+      { value: 173_400, suffix: "+", label: "Facebook views, from zero", compact: true },
+      { value: 729, label: "Facebook followers built from scratch" },
       { value: 181, suffix: "+", label: "YouTube watch hours" },
     ],
-    screenshotPending: true,
+    image: {
+      src: "/images/case-studies/mji.png",
+      width: 1200,
+      height: 365,
+      alt: "My Journey Inc. Facebook insights: 173,485 views, interactions up 70%, net follows up 126%",
+    },
+    logo: {
+      src: "/images/clients/mji.png",
+      width: 400,
+      height: 195,
+      alt: "My Journey Inc. logo",
+    },
   },
   {
     id: "winx",
     client: "Winx Global",
-    sector: "LPG / Energy",
+    sector: "LPG / Energy · Port Harcourt",
     timeframe: "Oct 2025 – present",
     tier: "featured",
-    hook: "Real organic traction in 60 days — on zero ad spend.",
+    hook: "37,300+ organic views for a gas delivery brand — 78% straight from TikTok search.",
     problem:
       "An energy brand in a category nobody scrolls social media to see, needing consistent presence and engagement without a paid budget to lean on.",
     action:
-      "I run end-to-end social operations — content creation, graphic design, strategy, and weekly performance reporting — on a disciplined 3-posts-per-week cadence, engineered for organic reach.",
+      "I run end-to-end social operations — content creation, graphic design, strategy, and weekly performance reporting — on a disciplined 3-posts-per-week cadence, engineered for search-driven organic reach: people searching “gas vendor near me” find Winx.",
     results: [
-      { value: 1_576, label: "TikTok likes in the first 2 months" },
+      { value: 37_300, suffix: "+", label: "organic video views in year one", compact: true },
+      { value: 77, suffix: ".9%", label: "of TikTok traffic from search" },
       { value: 0, prefix: "₦", label: "ad spend — fully organic" },
-      { value: 3, label: "posts per week, every week" },
     ],
-    screenshotPending: true,
+    image: {
+      src: "/images/case-studies/winx.png",
+      width: 1200,
+      height: 569,
+      alt: "Winx Global TikTok Studio key metrics: 37.3K video views, 1.9K likes, Jul 2025 – Jul 2026",
+    },
+    logo: {
+      src: "/images/clients/winx.png",
+      width: 400,
+      height: 400,
+      alt: "Winx Global logo",
+    },
   },
   {
     id: "richland",
@@ -85,11 +129,16 @@ export const caseStudies: CaseStudy[] = [
     action:
       "I owned the full content pipeline personally — sourcing, shooting, editing, captioning, publishing — turning school life into a consistent content engine parents actually engaged with.",
     results: [
-      { value: 23_800, suffix: "+", label: "views from a standing start" },
+      { value: 23_800, suffix: "+", label: "views from a standing start", compact: true },
       { value: 225, label: "Facebook followers, from zero" },
       { value: 1_216, label: "post engagements" },
     ],
-    screenshotPending: true,
+    logo: {
+      src: "/images/clients/richland.png",
+      width: 200,
+      height: 200,
+      alt: "Richland Schools logo",
+    },
   },
   {
     id: "a-new-song",
@@ -126,6 +175,12 @@ export const caseStudies: CaseStudy[] = [
     action:
       "Develop the content strategy and paid advertising plans that position the community to a business audience.",
     results: [{ value: 1, label: "ongoing strategy engagement" }],
+    logo: {
+      src: "/images/clients/hanging-garden.png",
+      width: 400,
+      height: 400,
+      alt: "Hanging Garden logo",
+    },
   },
 ];
 

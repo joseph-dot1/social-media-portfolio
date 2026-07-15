@@ -2,6 +2,16 @@
 
 Source of truth for all copy/numbers, extracted from Eshenake's resume and pricing document (2026-07-15). Supersedes the `[PLACEHOLDER]` markers in `SITE_PLAN.md` where filled.
 
+## UPDATE 2026-07-15 — analytics screenshots received (Google Drive)
+
+Client analytics screenshots supersede the resume numbers below where they differ:
+
+- **Chibest (TikTok Studio, Apr 1 – Jul 14, 2026):** 735.8K video views (+509.2K, +224.7%) · 5.1K total followers (+1.6K net) · 41.9K likes · 25.5K profile views · top video 352K views · traffic: 54% For You / **30.8% Search** · audience 87.9% Nigeria. The Apr–Jul date range on the screenshot **confirms** the "under 4 months" framing.
+- **MJI (Facebook Insights, 15 Jan 2025 – 15 Jul 2026):** 173,485 views · 729 followers (**+248.8%** vs previous period) · 3,313 interactions (+70%) · 537 net follows (+126%) · 2,039 page visits (+139.6%) · Reels = 67.9% of views.
+- **Winx (TikTok Studio, Jul 2025 – Jul 2026):** 37.3K video views · 1.9K likes · 194 followers · **77.9% of traffic from Search** (queries like "industrial gas vendor in warri") — strongest possible proof of search-driven organic strategy.
+- **Hero band updated:** 800K+ → **900K+ organic views** (735.8K + 173.5K + 23.8K + 12.1K ≈ 945K, conservative floor).
+- **Assets now real:** logos for Chibest, Winx, MJI, Richland, Hanging Garden (`public/images/clients/`); analytics proof shots for Chibest, MJI, Winx (`public/images/case-studies/`). Still placeholder: headshot, A New Song + DataFluent logos, Richland analytics shot.
+
 ## Contact & links (confirmed)
 
 - WhatsApp: **+234 913 484 5350** (user gave 09134845350; resume confirms the international format)

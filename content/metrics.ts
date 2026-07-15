@@ -7,10 +7,11 @@ export interface Metric {
   compact?: boolean;
 }
 
-// Aggregate proof for the hero metrics band. Sources: resume, 2026-07.
-// 800K+ views = 604.3K Chibest + 165.6K MJI FB + 12.1K MJI YT + 23.8K Richland (conservative floor).
+// Aggregate proof for the hero metrics band. Sources: client analytics
+// screenshots, 2026-07-15. 900K+ views = 735.8K Chibest + 173.5K MJI FB
+// + 23.8K Richland + 12.1K MJI YT ≈ 945K (conservative floor).
 export const heroMetrics: Metric[] = [
-  { value: 800_000, suffix: "+", label: "organic views generated", compact: true },
+  { value: 900_000, suffix: "+", label: "organic views generated", compact: true },
   { value: 7, label: "brands grown" },
   { value: 3, suffix: "+", label: "years running social growth" },
   { value: 30, suffix: "+", label: "qualified leads from paid social" },

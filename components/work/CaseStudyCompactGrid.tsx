@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { compact } from "@/content/case-studies";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/motion";
@@ -20,7 +21,17 @@ export function CaseStudyCompactGrid() {
           variants={fadeUp}
           className="group flex flex-col gap-4 rounded-2xl border border-tint bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:border-blue/25 hover:shadow-lg hover:shadow-blue/5"
         >
-          <PlaceholderBox label={`${study.client} logo`} className="h-12 w-12 rounded-xl" />
+          {study.logo ? (
+            <Image
+              src={study.logo.src}
+              width={48}
+              height={48}
+              alt={study.logo.alt}
+              className="h-12 w-12 rounded-xl border border-tint object-contain"
+            />
+          ) : (
+            <PlaceholderBox label={`${study.client} logo`} className="h-12 w-12 rounded-xl" />
+          )}
           <div>
             <h3 className="font-semibold">{study.client}</h3>
             <p className="text-xs font-medium text-mute/70">
