@@ -1,0 +1,141 @@
+"use client";
+
+import { useRef, useState } from "react";
+import dynamic from "next/dynamic";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { usePersona } from "@/lib/persona";
+import { site } from "@/content/site";
+import { EASE } from "@/lib/motion";
+import { HeroPoster } from "./HeroPoster";
+import { PersonaToggle } from "./PersonaToggle";
+import { useSceneGate } from "./useSceneGate";
+
+// The 3D bundle loads behind the meaningful HTML, never blocking first paint.
+const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
+
+export function Hero() {
+  const { persona } = usePersona();
+  const sceneEnabled = useSceneGate();
+  const ref = useRef<HTMLElement>(null);
+
+  // Desktop: 170vh section; the inner viewport pins while the scene forms.
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const textOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
+  const textY = useTransform(scrollYProgress, [0, 0.35], [0, -40]);
+  const sceneOpacity = useTransform(scrollYProgress, [0.55, 0.8], [1, 0]);
+
+  // Once the handoff to the metrics band completes, unmount the canvas —
+  // GPU cost drops to zero for the rest of the session.
+  const [sceneDone, setSceneDone] = useState(false);
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    if (v > 0.85 && !sceneDone) setSceneDone(true);
+  });
+
+  const subline =
+    persona === "brand" ? site.hero.sublineBrand : site.hero.sublineRecruiter;
+
+  return (
+    <section ref={ref} className="relative bg-navy lg:h-[170vh]" id="top">
+      <div className="relative flex min-h-svh flex-col overflow-hidden lg:sticky lg:top-0 lg:h-screen">
+        <HeroPoster />
+        {sceneEnabled && !sceneDone && (
+          <motion.div
+            className="absolute inset-0 hidden lg:block"
+            style={{ opacity: sceneOpacity }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+            <HeroScene />
+          </motion.div>
+        )}
+
+        <motion.div
+          className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col items-start justify-center gap-8 px-6 pb-24 pt-32 md:px-10"
+          style={{ opacity: textOpacity, y: textY }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: EASE }}
+          >
+            <PersonaToggle />
+          </motion.div>
+
+          <motion.h1
+            className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-6xl lg:text-[64px]"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: EASE, delay: 0.08 }}
+          >
+            {site.hero.headline}
+          </motion.h1>
+
+          <motion.p
+            key={persona}
+            className="max-w-xl text-lg leading-relaxed text-blue-100 md:text-xl"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: EASE }}
+          >
+            {subline}
+          </motion.p>
+
+          <motion.div
+            className="flex flex-wrap items-center gap-4"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
+          >
+            {persona === "brand" ? (
+              <a
+                href={site.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-white transition-transform duration-200 hover:scale-[1.03]"
+              >
+                WhatsApp me
+              </a>
+            ) : (
+              <a
+                href={site.resumePath}
+                download
+                className="rounded-full bg-orange px-7 py-3.5 text-base font-semibold text-white transition-transform duration-200 hover:scale-[1.03]"
+              >
+                Download resume
+              </a>
+            )}
+            <a
+              href="#work"
+              className="rounded-full border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-colors duration-200 hover:bg-white/10"
+            >
+              See the results
+            </a>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 lg:block"
+          style={{ opacity: textOpacity }}
+          aria-hidden="true"
+        >
+          <motion.div
+            className="flex h-10 w-6 items-start justify-center rounded-full border border-white/30 p-1.5"
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <div className="h-2 w-1 rounded-full bg-white/60" />
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
