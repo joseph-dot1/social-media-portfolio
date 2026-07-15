@@ -1,11 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { usePersona } from "@/lib/persona";
 import { site } from "@/content/site";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/motion";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { PlaceholderBox } from "@/components/ui/PlaceholderBox";
 
 export function About() {
   const { persona } = usePersona();
@@ -22,7 +22,13 @@ export function About() {
         viewport={VIEWPORT}
       >
         <motion.div variants={fadeUp}>
-          <PlaceholderBox label="Headshot" className="aspect-[4/5] w-full max-w-sm" />
+          <Image
+            src="/images/headshot.jpg"
+            width={800}
+            height={1000}
+            alt={`${site.name}, social media growth specialist`}
+            className="w-full max-w-sm rounded-2xl shadow-xl shadow-navy/10"
+          />
         </motion.div>
         <div className="flex flex-col gap-5">
           <motion.div variants={fadeUp}>
