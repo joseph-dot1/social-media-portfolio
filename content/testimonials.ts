@@ -19,12 +19,14 @@ export const testimonials: Testimonial[] = [
     approved: false,
   },
   {
+    // Verbatim from the client's WhatsApp review, sent 2026-07-16 in
+    // response to Eshenake's request for feedback and a review.
     quote:
-      "Within two months our TikTok was getting real organic engagement without a naira of ad spend. The weekly reports mean I always know exactly what's working.",
+      "I would love to really commend you for all your hard work and how much you have put into working everything out. You worked with humility and innovation. Thank you so much.",
     name: "Ojewe",
     role: "CEO",
     company: "Winx Global",
-    approved: false,
+    approved: true,
   },
   {
     quote:

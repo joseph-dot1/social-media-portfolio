@@ -34,11 +34,22 @@ export const websites: WebsiteProject[] = [
   },
   {
     id: "mji-site",
-    name: "My Journey Inc. website",
-    status: "in-progress",
-    role: "Leading the build",
+    name: "My Journey Inc.",
+    url: "https://mji-website-5mjy.vercel.app/",
+    status: "live",
+    role: "Led the build",
     description:
-      "The nonprofit's first website — designed and developed with AI-assisted tools as part of a 3+ year digital retainer, launching on Vercel.",
-    stack: ["Lovable", "Claude Code", "Base44", "Vercel"],
+      "The nonprofit's first website — 650+ active readers across 5 chapters in Nigeria. Designed and developed AI-first as part of a 3+ year digital retainer.",
+    stack: ["Next.js", "Claude Code", "Lovable", "Vercel"],
+  },
+  {
+    id: "bestpath",
+    name: "BestPath",
+    url: "https://bestpath-skill-app-gvwe.vercel.app/",
+    status: "live",
+    role: "Designed & built end-to-end",
+    description:
+      "A skill-learning web app: type any skill and get a personalized beginner-to-pro roadmap with verified resources, checkpoints, and insights from working professionals.",
+    stack: ["Next.js", "Claude Code", "Vercel"],
   },
 ];
