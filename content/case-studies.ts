@@ -123,16 +123,22 @@ export const caseStudies: CaseStudy[] = [
     sector: "Education",
     timeframe: "Jul 2025 – Mar 2026",
     tier: "featured",
-    hook: "A school's Facebook built from a standing start: 23,800+ views.",
+    hook: "A school's Facebook built from a standing start: 23,900+ views.",
     problem:
       "A school with no social presence and no in-house capacity to create one — no content pipeline, no one to shoot, edit, or publish.",
     action:
-      "I owned the full content pipeline personally — sourcing, shooting, editing, captioning, publishing — turning school life into a consistent content engine parents actually engaged with.",
+      "I owned the full content pipeline personally — sourcing, shooting, editing, captioning, publishing — turning school life into a consistent content engine parents actually engaged with, driving real inbound interest through direct messages.",
     results: [
-      { value: 23_800, suffix: "+", label: "views from a standing start", compact: true },
-      { value: 225, label: "Facebook followers, from zero" },
-      { value: 1_216, label: "post engagements" },
+      { value: 23_985, label: "views from a standing start", compact: true },
+      { value: 702, label: "interactions, up 100% period over period" },
+      { value: 4, label: "messaging conversations started, up 100%" },
     ],
+    image: {
+      src: "/images/case-studies/richland.png",
+      width: 1200,
+      height: 626,
+      alt: "Richland Schools Facebook Insights: 23,985 views, 702 interactions (+100%), 4 messaging conversations started (+100%)",
+    },
     logo: {
       src: "/images/clients/richland.png",
       width: 200,
@@ -163,6 +169,12 @@ export const caseStudies: CaseStudy[] = [
     action:
       "Managed content creation, social media presence, and design assets under one structured operation.",
     results: [{ value: 12, label: "months running the full content operation" }],
+    logo: {
+      src: "/images/clients/datafluent.png",
+      width: 400,
+      height: 400,
+      alt: "DataFluent Academy logo",
+    },
   },
   {
     id: "hanging-garden",
