@@ -1,24 +1,32 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { usePersona } from "@/lib/persona";
 import { site } from "@/content/site";
 
 const LINKS = [
-  { href: "#work", label: "Work" },
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/work", label: "Work" },
+  { href: "/websites", label: "Websites" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Nav() {
   const { persona } = usePersona();
+  const pathname = usePathname();
   const { scrollY } = useScroll();
-  const [solid, setSolid] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useMotionValueEvent(scrollY, "change", (y) => setSolid(y > 40));
+  useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 40));
+
+  // Transparent-over-navy only applies on the home hero; interior pages
+  // are white, so the nav is always solid there.
+  const solid = scrolled || open || pathname !== "/";
 
   const cta =
     persona === "brand" ? (
@@ -43,33 +51,38 @@ export function Nav() {
   return (
     <motion.header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        solid || open
-          ? "bg-white/90 shadow-sm shadow-navy/5 backdrop-blur-md"
-          : "bg-transparent"
+        solid ? "bg-white/90 shadow-sm shadow-navy/5 backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
-        <a
-          href="#top"
+        <Link
+          href="/"
           className={`text-base font-bold tracking-tight transition-colors duration-300 ${
-            solid || open ? "text-navy" : "text-white"
+            solid ? "text-navy" : "text-white"
           }`}
         >
           {site.name}
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-8 md:flex">
-          {LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className={`text-sm font-semibold transition-colors duration-300 ${
-                solid ? "text-mute hover:text-navy" : "text-blue-100 hover:text-white"
-              }`}
-            >
-              {l.label}
-            </a>
-          ))}
+          {LINKS.map((l) => {
+            const active = pathname === l.href || pathname.startsWith(l.href + "/");
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                className={`text-sm font-semibold transition-colors duration-300 ${
+                  solid
+                    ? active
+                      ? "text-navy underline decoration-orange decoration-2 underline-offset-8"
+                      : "text-mute hover:text-navy"
+                    : "text-blue-100 hover:text-white"
+                }`}
+              >
+                {l.label}
+              </Link>
+            );
+          })}
           {cta}
         </div>
 
@@ -81,7 +94,7 @@ export function Nav() {
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
             className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 ${
-              solid || open ? "text-navy" : "text-white"
+              solid ? "text-navy" : "text-white"
             }`}
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -98,14 +111,14 @@ export function Nav() {
       {open && (
         <div className="flex flex-col gap-1 border-t border-tint bg-white px-6 pb-6 pt-3 md:hidden">
           {LINKS.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
               className="rounded-lg px-2 py-3 text-base font-semibold text-ink hover:bg-tint"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
       )}
