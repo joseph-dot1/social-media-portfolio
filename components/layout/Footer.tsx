@@ -1,4 +1,13 @@
+import Link from "next/link";
 import { site } from "@/content/site";
+
+const PAGES = [
+  { href: "/work", label: "Work" },
+  { href: "/websites", label: "Websites" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
 
 export function Footer() {
   return (
@@ -9,6 +18,13 @@ export function Footer() {
           <span className="block text-blue-200/70">
             {site.role} · {site.location}
           </span>
+          <nav className="mt-3 flex flex-wrap gap-4 font-medium">
+            {PAGES.map((p) => (
+              <Link key={p.href} href={p.href} className="hover:text-white">
+                {p.label}
+              </Link>
+            ))}
+          </nav>
         </div>
         <div className="flex flex-wrap gap-6 font-medium">
           <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-white">

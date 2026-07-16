@@ -25,8 +25,21 @@ const STORAGE_KEY = "persona";
 
 function readInitial(): Persona | null {
   const param = new URLSearchParams(window.location.search).get("for");
-  if (param === "recruiters" || param === "recruiter") return "recruiter";
-  if (param === "brands" || param === "brand") return "brand";
+  const fromParam =
+    param === "recruiters" || param === "recruiter"
+      ? "recruiter"
+      : param === "brands" || param === "brand"
+        ? "brand"
+        : null;
+  if (fromParam) {
+    // Persist the deep-linked persona so it survives cross-page loads.
+    try {
+      window.localStorage.setItem(STORAGE_KEY, fromParam);
+    } catch {
+      // private mode — persona just won't persist
+    }
+    return fromParam;
+  }
   const stored = window.localStorage.getItem(STORAGE_KEY);
   if (stored === "brand" || stored === "recruiter") return stored;
   return null;
