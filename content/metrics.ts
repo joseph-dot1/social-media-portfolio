@@ -7,6 +7,17 @@ export interface Metric {
   compact?: boolean;
 }
 
+const compactFormat = new Intl.NumberFormat("en-US", {
+  notation: "compact",
+  maximumFractionDigits: 1,
+});
+
+/** Static string form of a metric — for marquees, cards, meta text. */
+export function formatMetric(m: Metric): string {
+  const n = m.compact ? compactFormat.format(m.value) : m.value.toLocaleString("en-US");
+  return `${m.prefix ?? ""}${n}${m.suffix ?? ""}`;
+}
+
 // Aggregate proof for the hero metrics band. Sources: client analytics
 // screenshots, 2026-07-15. 900K+ views = 735.8K Chibest + 173.5K MJI FB
 // + 23.8K Richland + 12.1K MJI YT ≈ 945K (conservative floor).

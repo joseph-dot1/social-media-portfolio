@@ -29,13 +29,15 @@ export function CaseStudyFeatured({
         className={flip ? "lg:order-2" : undefined}
       >
         {study.image ? (
-          <Image
-            src={study.image.src}
-            width={study.image.width}
-            height={study.image.height}
-            alt={study.image.alt}
-            className="w-full rounded-2xl border border-tint shadow-lg shadow-navy/5"
-          />
+          <div className="group overflow-hidden rounded-2xl border border-tint shadow-lg shadow-navy/5">
+            <Image
+              src={study.image.src}
+              width={study.image.width}
+              height={study.image.height}
+              alt={study.image.alt}
+              className="w-full transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+            />
+          </div>
         ) : (
           <PlaceholderBox
             label={`${study.client} analytics screenshot`}

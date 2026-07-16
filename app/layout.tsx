@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { PersonaProvider } from "@/lib/persona";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -32,6 +34,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} antialiased`}>
       <body>
+        <SmoothScroll />
+        <ScrollProgress />
         <PersonaProvider>{children}</PersonaProvider>
       </body>
     </html>

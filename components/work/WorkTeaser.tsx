@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { featured } from "@/content/case-studies";
+import { formatMetric } from "@/content/metrics";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/motion";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PlaceholderBox } from "@/components/ui/PlaceholderBox";
@@ -60,11 +61,7 @@ export function WorkTeaser() {
                 </div>
                 <p className="text-sm leading-relaxed text-mute">{study.hook}</p>
                 <p className="mt-auto pt-2 text-2xl font-semibold tracking-tight text-orange">
-                  {study.results[0].prefix}
-                  {study.results[0].compact
-                    ? Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 }).format(study.results[0].value)
-                    : study.results[0].value.toLocaleString("en-US")}
-                  {study.results[0].suffix}
+                  {formatMetric(study.results[0])}
                 </p>
               </Link>
             </motion.div>
