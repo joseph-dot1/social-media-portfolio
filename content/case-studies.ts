@@ -133,6 +133,12 @@ export const caseStudies: CaseStudy[] = [
       { value: 702, label: "interactions, up 100% period over period" },
       { value: 4, label: "messaging conversations started, up 100%" },
     ],
+    image: {
+      src: "/images/case-studies/richland.png",
+      width: 1200,
+      height: 626,
+      alt: "Richland Schools Facebook Insights: 23,985 views, 702 interactions (+100%), 4 messaging conversations started (+100%)",
+    },
     logo: {
       src: "/images/clients/richland.png",
       width: 200,
@@ -163,6 +169,12 @@ export const caseStudies: CaseStudy[] = [
     action:
       "Managed content creation, social media presence, and design assets under one structured operation.",
     results: [{ value: 12, label: "months running the full content operation" }],
+    logo: {
+      src: "/images/clients/datafluent.png",
+      width: 400,
+      height: 400,
+      alt: "DataFluent Academy logo",
+    },
   },
   {
     id: "hanging-garden",
