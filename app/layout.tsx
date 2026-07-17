@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import { PersonaProvider } from "@/lib/persona";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { site } from "@/content/site";
+import { SITE_URL } from "@/lib/site-url";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,6 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: `${site.name} — Social Media Growth Specialist`,
   description:
     "Social media growth and AI-powered marketing. 900,000+ organic views generated across 7 brands — automotive, education, energy, and nonprofit.",
@@ -37,6 +40,7 @@ export default function RootLayout({
         <SmoothScroll />
         <ScrollProgress />
         <PersonaProvider>{children}</PersonaProvider>
+        <Analytics />
       </body>
     </html>
   );

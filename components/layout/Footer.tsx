@@ -4,6 +4,7 @@ import { site } from "@/content/site";
 const PAGES = [
   { href: "/work", label: "Work" },
   { href: "/websites", label: "Websites" },
+  { href: "/designs", label: "Designs" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
