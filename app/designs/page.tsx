@@ -6,9 +6,9 @@ import { DesignsGrid } from "@/components/designs/DesignsGrid";
 import { ClosingCta } from "@/components/cta/ClosingCta";
 
 export const metadata: Metadata = {
-  title: "Designs — Eshenake Joseph",
+  title: "Designs | Eshenake Joseph",
   description:
-    "AI-generated brand creatives — campaign flyers, brand identity boards, and thumbnails produced for real client campaigns.",
+    "AI-generated brand creatives, including campaign flyers, brand identity boards, and thumbnails produced for real client campaigns.",
 };
 
 export default function DesignsPage() {
@@ -19,7 +19,7 @@ export default function DesignsPage() {
         <PageHeader
           eyebrow="Designs"
           title="AI-generated creative, shipped to real campaigns."
-          intro="Flyers, campaign visuals, brand boards, and thumbnails — produced with AI tools, refined by hand, and posted on real client accounts."
+          intro="Flyers, campaign visuals, brand boards, and thumbnails produced with AI tools, refined by hand, and posted on real client accounts."
         />
         <DesignsGrid />
         <ClosingCta />

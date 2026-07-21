@@ -38,12 +38,12 @@ export function ContactForm() {
           Or send the details now.
         </h2>
         <p className="mt-2 max-w-xl text-mute">
-          Tell me what you're working with — I reply within a day.
+          Tell me what you're working with. I reply within a day.
         </p>
 
         {sent ? (
           <div className="mt-8 rounded-xl bg-white p-6 font-semibold text-blue">
-            Message sent — I'll get back to you within a day. Talk soon. ✦
+            Message sent. I'll get back to you within a day. Talk soon. ✦
           </div>
         ) : (
           <form

@@ -45,7 +45,7 @@ export const websites: WebsiteProject[] = [
       src: "/images/websites/mji-site.jpg",
       width: 1200,
       height: 750,
-      alt: "My Journey Inc. homepage — Purpose isn't found. It's built.",
+      alt: "My Journey Inc. homepage: Purpose isn't found. It's built.",
     },
   },
   {
@@ -61,7 +61,7 @@ export const websites: WebsiteProject[] = [
       src: "/images/websites/bestpath.jpg",
       width: 1200,
       height: 750,
-      alt: "BestPath homepage — Every skill has a best path.",
+      alt: "BestPath homepage: Every skill has a best path.",
     },
   },
 ];
