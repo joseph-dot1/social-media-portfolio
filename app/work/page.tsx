@@ -8,9 +8,9 @@ import { ClosingCta } from "@/components/cta/ClosingCta";
 import { flagship, featured } from "@/content/case-studies";
 
 export const metadata: Metadata = {
-  title: "Work — Eshenake Joseph",
+  title: "Work | Eshenake Joseph",
   description:
-    "Client case studies with real numbers: Chibest Autos, My Journey Inc., Winx Global, Richland Schools, and more — 900,000+ organic views generated.",
+    "Client case studies with real numbers: Chibest Autos, My Journey Inc., Winx Global, Richland Schools, and more, with 900,000+ organic views generated.",
 };
 
 export default function WorkPage() {
@@ -21,7 +21,7 @@ export default function WorkPage() {
         <PageHeader
           eyebrow="Work"
           title="Every case study here has a number in it."
-          intro="Problem, what I did, and the results — pulled straight from each client's own analytics. No vanity claims, no vibes."
+          intro="Problem, what I did, and the results, pulled straight from each client's own analytics. No vanity claims, no vibes."
         />
         <div className="flex flex-col gap-24 pb-24 md:gap-32 md:pb-32">
           <CaseStudyFeatured study={flagship} />

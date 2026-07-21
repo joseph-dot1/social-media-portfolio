@@ -12,7 +12,7 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Joseph has run our entire digital presence for over three years — from zero followers to a real community, plus our creative assets and even our website. He operates like a full digital department.",
+      "Joseph has run our entire digital presence for over three years, from zero followers to a real community, plus our creative assets and even our website. He operates like a full digital department.",
     name: "Damilola Emmanuel",
     role: "President",
     company: "My Journey Inc.",

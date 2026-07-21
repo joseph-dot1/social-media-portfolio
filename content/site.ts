@@ -11,7 +11,7 @@ export const site = {
   whatsappUrl:
     "https://wa.me/2349134845350?text=" +
     encodeURIComponent(
-      "Hi Joseph — I found your portfolio and I'd like to talk about growing my brand."
+      "Hi Joseph, I found your portfolio and I'd like to talk about growing my brand."
     ),
   instagram: "https://www.instagram.com/socialmediajoe_/",
   tiktok: "https://www.tiktok.com/@socialmediajoe_",
@@ -27,13 +27,13 @@ export const site = {
     sublineBrand:
       "Social media growth and AI-powered marketing for brands that want numbers, not noise.",
     sublineRecruiter:
-      "Social media manager and content strategist — 7 brands grown, 900,000+ organic views, open to full-time roles.",
+      "Social media manager and content strategist with 7 brands grown and 900,000+ organic views, open to full-time roles.",
   },
 
   about: {
-    body: "I'm a social media manager and content strategist based in Warri, Nigeria, working with automotive, education, energy, and nonprofit brands for over three years. My edge is systems: content calendars that actually ship, community protocols that turn viewers into buyers, and AI tooling — Claude, Lovable, Zapier — that lets one person operate like a full digital department, from strategy through execution and reporting.",
+    body: "I'm a social media manager and content strategist based in Warri, Nigeria, working with automotive, education, energy, and nonprofit brands for over three years. My edge is systems: content calendars that actually ship, community protocols that turn viewers into buyers, and AI tooling such as Claude, Lovable, and Zapier that lets one person operate like a full digital department, from strategy through execution and reporting.",
     closingBrand:
-      "Currently taking on new brand engagements — most clients start with a WhatsApp conversation.",
+      "Currently taking on new brand engagements. Most clients start with a WhatsApp conversation.",
     closingRecruiter:
       "Open to full-time remote roles, in Nigeria or internationally.",
     tools: [

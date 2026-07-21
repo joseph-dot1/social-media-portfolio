@@ -94,7 +94,7 @@ function PinnedNarrative() {
     setActive(v < 0.33 ? 0 : v < 0.66 ? 1 : 2);
   });
 
-  // Each range must be strictly increasing — useTransform breaks on
+  // Each range must be strictly increasing because useTransform breaks on
   // duplicated keyframes. The last panel holds until the pin releases.
   const ranges: [number, number, number, number][] = [
     [0, 0.02, 0.26, 0.34],
@@ -108,7 +108,7 @@ function PinnedNarrative() {
         <div className="mx-auto grid w-full max-w-6xl grid-cols-[200px_1fr] gap-16 px-10">
           {/* Progress rail */}
           <div className="flex flex-col justify-center gap-8">
-            <Eyebrow>Case study — {flagship.client}</Eyebrow>
+            <Eyebrow>Case study: {flagship.client}</Eyebrow>
             {PHASES.map((phase, i) => (
               <div key={phase} className="flex items-center gap-3">
                 <div
@@ -173,7 +173,7 @@ function StackedNarrative() {
         className="flex flex-col gap-3"
       >
         <motion.div variants={fadeUp}>
-          <Eyebrow>Case study — {flagship.client}</Eyebrow>
+          <Eyebrow>Case study: {flagship.client}</Eyebrow>
         </motion.div>
         <motion.p variants={fadeUp} className="text-xs font-medium text-mute/70">
           {flagship.sector} · {flagship.timeframe}

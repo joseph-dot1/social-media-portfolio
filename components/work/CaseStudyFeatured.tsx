@@ -55,7 +55,7 @@ export function CaseStudyFeatured({
               className="h-10 w-10 rounded-lg border border-tint object-contain"
             />
           )}
-          <Eyebrow>Case study — {study.client}</Eyebrow>
+          <Eyebrow>Case study: {study.client}</Eyebrow>
         </motion.div>
         <motion.h3
           variants={fadeUp}
@@ -67,11 +67,11 @@ export function CaseStudyFeatured({
           {study.sector} · {study.timeframe}
         </motion.p>
         <motion.p variants={fadeUp} className="leading-relaxed text-mute">
-          <span className="font-semibold text-ink">Problem — </span>
+          <span className="font-semibold text-ink">Problem: </span>
           {study.problem}
         </motion.p>
         <motion.p variants={fadeUp} className="leading-relaxed text-mute">
-          <span className="font-semibold text-ink">What I did — </span>
+          <span className="font-semibold text-ink">What I did: </span>
           {study.action}
         </motion.p>
         <motion.div

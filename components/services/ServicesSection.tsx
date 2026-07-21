@@ -6,7 +6,7 @@ import { fadeUp, stagger, VIEWPORT } from "@/lib/motion";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 /**
- * Written once, read twice: brands see services, recruiters see skills —
+ * Written once, read twice: brands see services and recruiters see skills,
  * the copy never has to hedge because results-language serves both.
  */
 export function ServicesSection() {
@@ -27,7 +27,7 @@ export function ServicesSection() {
             variants={fadeUp}
             className="max-w-2xl text-3xl font-bold tracking-tight md:text-[44px] md:leading-tight"
           >
-            Every service runs as a system — strategy through reporting.
+            Every service runs as a system, from strategy through reporting.
           </motion.h2>
         </motion.div>
 

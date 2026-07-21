@@ -7,9 +7,9 @@ import { ProcessSteps } from "@/components/process/ProcessSteps";
 import { ClosingCta } from "@/components/cta/ClosingCta";
 
 export const metadata: Metadata = {
-  title: "Services — Eshenake Joseph",
+  title: "Services | Eshenake Joseph",
   description:
-    "Social media management, paid advertising, AI-powered content production, and AI web builds — run as systems, strategy through reporting.",
+    "Social media management, paid advertising, AI-powered content production, and AI web builds, run as systems from strategy through reporting.",
 };
 
 export default function ServicesPage() {

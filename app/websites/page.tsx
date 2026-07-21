@@ -6,9 +6,9 @@ import { WebsitesGrid } from "@/components/websites/WebsitesGrid";
 import { ClosingCta } from "@/components/cta/ClosingCta";
 
 export const metadata: Metadata = {
-  title: "Websites — Eshenake Joseph",
+  title: "Websites | Eshenake Joseph",
   description:
-    "Websites built AI-first with Claude Code, Lovable, and Base44, shipped on Vercel — from landing pages to full sites.",
+    "Websites built AI-first with Claude Code, Lovable, and Base44, shipped on Vercel, from landing pages to full sites.",
 };
 
 export default function WebsitesPage() {
@@ -19,7 +19,7 @@ export default function WebsitesPage() {
         <PageHeader
           eyebrow="Websites"
           title="Sites I've designed and built."
-          intro="I build websites AI-first — Claude Code, Lovable, Base44 — and ship them on Vercel. Fast to launch, fast to load, and built to the same performance discipline as this site."
+          intro="I build websites AI-first with Claude Code, Lovable, and Base44, then ship them on Vercel. Fast to launch, fast to load, and built to the same performance discipline as this site."
         />
         <WebsitesGrid />
         <ClosingCta />

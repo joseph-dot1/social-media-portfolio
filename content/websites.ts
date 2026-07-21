@@ -23,7 +23,7 @@ export const websites: WebsiteProject[] = [
     status: "live",
     role: "Designed & built end-to-end",
     description:
-      "The site you're on — a performance-budgeted Next.js build with a scroll-driven 3D hero, built AI-first with Claude Code and shipped on Vercel. Under 1MB on mobile.",
+      "The site you're on is a performance-budgeted Next.js build with a scroll-driven 3D hero, built AI-first with Claude Code and shipped on Vercel. Under 1MB on mobile.",
     stack: ["Next.js", "Tailwind", "Framer Motion", "React Three Fiber", "Claude Code", "Vercel"],
     image: {
       src: "/images/websites/portfolio.jpg",
@@ -39,7 +39,7 @@ export const websites: WebsiteProject[] = [
     status: "live",
     role: "Led the build",
     description:
-      "The nonprofit's first website — 650+ active readers across 5 chapters in Nigeria. Designed and developed AI-first as part of a 3+ year digital retainer.",
+      "The nonprofit's first website, with 650+ active readers across 5 chapters in Nigeria. Designed and developed AI-first as part of a 3+ year digital retainer.",
     stack: ["Next.js", "Claude Code", "Lovable", "Vercel"],
   },
   {

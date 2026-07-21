@@ -6,9 +6,9 @@ import { Testimonials } from "@/components/social/Testimonials";
 import { ClosingCta } from "@/components/cta/ClosingCta";
 
 export const metadata: Metadata = {
-  title: "About — Eshenake Joseph",
+  title: "About | Eshenake Joseph",
   description:
-    "Social media manager and content strategist in Warri, Nigeria — 3+ years, 7 brands, AI-first workflow. Open to full-time roles and freelance engagements.",
+    "Social media manager and content strategist in Warri, Nigeria with 3+ years, 7 brands, and an AI-first workflow. Open to full-time roles and freelance engagements.",
 };
 
 export default function AboutPage() {

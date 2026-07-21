@@ -7,7 +7,7 @@ import { fadeUp, stagger, VIEWPORT } from "@/lib/motion";
 
 /**
  * Navy bookend. The persona's CTA pair is emphasized, but BOTH audiences'
- * options are always present here — nobody hits the end of the page without
+ * options are always present here, so nobody hits the end of the page without
  * their action one click away.
  */
 export function ClosingCta() {
@@ -29,7 +29,7 @@ export function ClosingCta() {
               : "border border-white/30 text-white hover:bg-white/10"
           }`}
         >
-          WhatsApp me — {site.whatsappDisplay}
+          WhatsApp me: {site.whatsappDisplay}
         </a>
       </div>
     </div>

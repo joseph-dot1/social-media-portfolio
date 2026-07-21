@@ -35,11 +35,11 @@ export const caseStudies: CaseStudy[] = [
     sector: "Automotive · Lagos",
     timeframe: "Apr 2026 – present",
     tier: "flagship",
-    hook: "Repositioned a car dealer as an educational authority — 735,800+ views in under 4 months.",
+    hook: "Repositioned a car dealer as an educational authority, generating 735,800+ views in under 4 months.",
     problem:
-      "Every competitor was selling cars the same way: polished visuals, zero substance. Nobody in the space was building actual buyer trust — and car buyers do their research before they ever walk in.",
+      "Every competitor was selling cars the same way: polished visuals, zero substance. Nobody in the space was building actual buyer trust, and car buyers do their research before they ever walk in.",
     action:
-      "I repositioned the brand around an untapped “educational automotive authority” angle — rebuilt the content calendar, scripting, and editing from scratch, ran a structured community-management protocol across Facebook, Instagram, and TikTok, and co-managed paid campaigns with a media specialist on ₦300,000+ of Meta and TikTok spend. Nearly a third of all TikTok views now arrive through search — buyers looking for answers and finding Chibest.",
+      "I repositioned the brand around an untapped “educational automotive authority” angle, rebuilt the content calendar, scripting, and editing from scratch, ran a structured community-management protocol across Facebook, Instagram, and TikTok, and co-managed paid campaigns with a media specialist on ₦300,000+ of Meta and TikTok spend. Nearly a third of all TikTok views now arrive through search, with buyers looking for answers and finding Chibest.",
     results: [
       { value: 735_800, suffix: "+", label: "video views in under 4 months", compact: true },
       { value: 70, suffix: "%", label: "TikTok follower growth (3,000 → 5,100+)" },
@@ -65,11 +65,11 @@ export const caseStudies: CaseStudy[] = [
     sector: "Nonprofit",
     timeframe: "Apr 2023 – present · 3+ year retainer",
     tier: "featured",
-    hook: "From zero digital presence to 173,400+ views — and still on retainer 3 years later.",
+    hook: "From zero digital presence to 173,400+ views, and still on retainer 3 years later.",
     problem:
-      "A nonprofit with real work to show and no digital presence at all — zero followers, zero reach, no way for supporters to find them.",
+      "A nonprofit with real work to show and no digital presence at all: zero followers, zero reach, and no way for supporters to find them.",
     action:
-      "I've led their entire digital presence on retainer for over three years: strategy, content, community, AI-generated campaign creatives — and I'm now building their website with AI-assisted development tools. Page visits are up 139.6% and follower growth is up 248.8% period over period.",
+      "I've led their entire digital presence on retainer for over three years: strategy, content, community, and AI-generated campaign creatives. I'm now building their website with AI-assisted development tools. Page visits are up 139.6% and follower growth is up 248.8% period over period.",
     results: [
       { value: 173_400, suffix: "+", label: "Facebook views, from zero", compact: true },
       { value: 729, label: "Facebook followers built from scratch" },
@@ -94,15 +94,15 @@ export const caseStudies: CaseStudy[] = [
     sector: "LPG / Energy · Port Harcourt",
     timeframe: "Oct 2025 – present",
     tier: "featured",
-    hook: "37,300+ organic views for a gas delivery brand — 78% straight from TikTok search.",
+    hook: "37,300+ organic views for a gas delivery brand, with 78% straight from TikTok search.",
     problem:
       "An energy brand in a category nobody scrolls social media to see, needing consistent presence and engagement without a paid budget to lean on.",
     action:
-      "I run end-to-end social operations — content creation, graphic design, strategy, and weekly performance reporting — on a disciplined 3-posts-per-week cadence, engineered for search-driven organic reach: people searching “gas vendor near me” find Winx.",
+      "I run end-to-end social operations, including content creation, graphic design, strategy, and weekly performance reporting, on a disciplined 3-posts-per-week cadence engineered for search-driven organic reach: people searching “gas vendor near me” find Winx.",
     results: [
       { value: 37_300, suffix: "+", label: "organic video views in year one", compact: true },
       { value: 77, suffix: ".9%", label: "of TikTok traffic from search" },
-      { value: 0, prefix: "₦", label: "ad spend — fully organic" },
+      { value: 0, prefix: "₦", label: "ad spend: fully organic" },
     ],
     image: {
       src: "/images/case-studies/winx.png",
@@ -125,9 +125,9 @@ export const caseStudies: CaseStudy[] = [
     tier: "featured",
     hook: "A school's Facebook built from a standing start: 23,900+ views.",
     problem:
-      "A school with no social presence and no in-house capacity to create one — no content pipeline, no one to shoot, edit, or publish.",
+      "A school with no social presence and no in-house capacity to create one: no content pipeline and no one to shoot, edit, or publish.",
     action:
-      "I owned the full content pipeline personally — sourcing, shooting, editing, captioning, publishing — turning school life into a consistent content engine parents actually engaged with, driving real inbound interest through direct messages.",
+      "I owned the full content pipeline personally, from sourcing and shooting to editing, captioning, and publishing, turning school life into a consistent content engine parents actually engaged with and driving real inbound interest through direct messages.",
     results: [
       { value: 23_985, label: "views from a standing start", compact: true },
       { value: 702, label: "interactions, up 100% period over period" },
@@ -155,7 +155,7 @@ export const caseStudies: CaseStudy[] = [
     hook: "Found the format that outperformed the channel average 5–10x.",
     problem: "Videos plateaued at 100–200 views.",
     action:
-      "Identified and tested a content format built around clarity — one idea per video, framed for search.",
+      "Identified and tested a content format built around clarity: one idea per video, framed for search.",
     results: [{ value: 1_000, suffix: "+", label: "views per video vs a 100–200 average" }],
   },
   {

@@ -6,9 +6,9 @@ import { ContactDetails } from "@/components/cta/ContactDetails";
 import { ClosingCta } from "@/components/cta/ClosingCta";
 
 export const metadata: Metadata = {
-  title: "Contact — Eshenake Joseph",
+  title: "Contact | Eshenake Joseph",
   description:
-    "Get in touch — WhatsApp for brand engagements, resume and email for recruiters. Based in Warri, Nigeria; works remote worldwide.",
+    "Get in touch: WhatsApp for brand engagements, resume and email for recruiters. Based in Warri, Nigeria; works remote worldwide.",
 };
 
 export default function ContactPage() {
@@ -19,7 +19,7 @@ export default function ContactPage() {
         <PageHeader
           eyebrow="Contact"
           title="One message starts it."
-          intro="Brands: WhatsApp is the fastest way to reach me. Recruiters: grab the resume and email me — I reply within a day."
+          intro="Brands: WhatsApp is the fastest way to reach me. Recruiters: grab the resume and email me. I reply within a day."
         />
         <ContactDetails />
         <ClosingCta />

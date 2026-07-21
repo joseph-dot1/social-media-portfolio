@@ -7,17 +7,17 @@ export const services: Service[] = [
   {
     title: "Social Media Management & Growth",
     description:
-      "Strategy, content calendars, and community management across TikTok, Instagram, Facebook, and YouTube — run as a system, not a posting schedule.",
+      "Strategy, content calendars, and community management across TikTok, Instagram, Facebook, and YouTube, run as a system rather than a posting schedule.",
   },
   {
     title: "Paid Social Advertising",
     description:
-      "Meta and TikTok campaign setup and management, built around conversion goals — 30+ qualified leads generated on co-managed budgets.",
+      "Meta and TikTok campaign setup and management, built around conversion goals, with 30+ qualified leads generated on co-managed budgets.",
   },
   {
     title: "Content Production & AI-Powered Creative",
     description:
-      "Scripting, video editing, captions, and AI-generated branded graphics — a content pipeline that ships consistently without a production team.",
+      "Scripting, video editing, captions, and AI-generated branded graphics: a content pipeline that ships consistently without a production team.",
   },
   {
     title: "AI Web Builds",
@@ -48,7 +48,7 @@ export const aiCapabilities = [
 export const processSteps = [
   {
     title: "Audit",
-    description: "Where your brand stands today — content, competitors, and the gap nobody's filling.",
+    description: "Where your brand stands today: content, competitors, and the gap nobody's filling.",
   },
   {
     title: "Strategy",
@@ -60,6 +60,6 @@ export const processSteps = [
   },
   {
     title: "Reporting",
-    description: "Numbers you can read in two minutes — what worked, what's next.",
+    description: "Numbers you can read in two minutes: what worked and what's next.",
   },
 ];
