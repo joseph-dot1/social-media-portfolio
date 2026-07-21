@@ -37,6 +37,25 @@ export function Hero() {
   // GPU cost drops to zero for the rest of the session.
   const [sceneDone, setSceneDone] = useState(false);
   useMotionValueEvent(scrollYProgress, "change", (v) => {
+    if (v > 0.85 && !sceneDone) setSceneDone(true);
+  });
+
+  const subline =
+    persona === "brand" ? site.hero.sublineBrand : site.hero.sublineRecruiter;
+
+  return (
+    <section ref={ref} className="relative bg-navy lg:h-[170vh]" id="top">
+      {/* Animated ambient gradient background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-blue-500/10 blur-[120px] animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute top-[60%] -right-[10%] w-[40%] h-[60%] rounded-full bg-orange-500/10 blur-[120px] animate-pulse" style={{ animationDuration: '12s' }} />
+      </div>
+      <div className="relative flex min-h-svh flex-col overflow-hidden lg:sticky lg:top-0 lg:h-screen">
+        <HeroPoster />
+        {sceneEnabled && !sceneDone && (
+          <motion.div
+            className="absolute inset-0 hidden lg:block"
+            style={{ opacity: sceneOpacity }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
