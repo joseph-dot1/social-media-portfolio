@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { ServicesSection } from "@/components/services/ServicesSection";
 import { ProcessSteps } from "@/components/process/ProcessSteps";
+import { PricingTeaser } from "@/components/services/PricingTeaser";
 import { ClosingCta } from "@/components/cta/ClosingCta";
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function ServicesPage() {
         />
         <ServicesSection />
         <ProcessSteps />
+        <PricingTeaser />
         <ClosingCta />
       </main>
       <Footer />

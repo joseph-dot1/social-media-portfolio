@@ -3,6 +3,7 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { ContactDetails } from "@/components/cta/ContactDetails";
+import { ContactForm } from "@/components/cta/ContactForm";
 import { ClosingCta } from "@/components/cta/ClosingCta";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function ContactPage() {
           intro="Brands: WhatsApp is the fastest way to reach me. Recruiters: grab the resume and email me. I reply within a day."
         />
         <ContactDetails />
+        <ContactForm />
         <ClosingCta />
       </main>
       <Footer />

@@ -41,6 +41,12 @@ export const websites: WebsiteProject[] = [
     description:
       "The nonprofit's first website, with 650+ active readers across 5 chapters in Nigeria. Designed and developed AI-first as part of a 3+ year digital retainer.",
     stack: ["Next.js", "Claude Code", "Lovable", "Vercel"],
+    image: {
+      src: "/images/websites/mji-site.jpg",
+      width: 1200,
+      height: 750,
+      alt: "My Journey Inc. homepage — Purpose isn't found. It's built.",
+    },
   },
   {
     id: "bestpath",
@@ -51,5 +57,11 @@ export const websites: WebsiteProject[] = [
     description:
       "A skill-learning web app: type any skill and get a personalized beginner-to-pro roadmap with verified resources, checkpoints, and insights from working professionals.",
     stack: ["Next.js", "Claude Code", "Vercel"],
+    image: {
+      src: "/images/websites/bestpath.jpg",
+      width: 1200,
+      height: 750,
+      alt: "BestPath homepage — Every skill has a best path.",
+    },
   },
 ];

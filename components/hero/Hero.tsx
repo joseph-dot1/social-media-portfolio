@@ -10,7 +10,7 @@ import {
 } from "framer-motion";
 import { usePersona } from "@/lib/persona";
 import { site } from "@/content/site";
-import { EASE } from "@/lib/motion";
+import { SPRING } from "@/lib/motion";
 import { HeroPoster } from "./HeroPoster";
 import { PersonaToggle } from "./PersonaToggle";
 import { useSceneGate } from "./useSceneGate";
@@ -63,18 +63,18 @@ export function Hero() {
           style={{ opacity: textOpacity, y: textY }}
         >
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: EASE }}
+            initial={{ opacity: 0, y: 24, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={SPRING}
           >
             <PersonaToggle />
           </motion.div>
 
           <motion.h1
             className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-6xl lg:text-[64px]"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: EASE, delay: 0.08 }}
+            initial={{ opacity: 0, y: 32, scale: 1.04 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ ...SPRING, delay: 0.1 }}
           >
             {site.hero.headline}
           </motion.h1>
@@ -82,18 +82,18 @@ export function Hero() {
           <motion.p
             key={persona}
             className="max-w-xl text-lg leading-relaxed text-blue-100 md:text-xl"
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: EASE }}
+            transition={{ ...SPRING, delay: 0.22 }}
           >
             {subline}
           </motion.p>
 
           <motion.div
             className="flex flex-wrap items-center gap-4"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ ...SPRING, delay: 0.34 }}
           >
             {persona === "brand" ? (
               <a
